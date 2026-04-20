@@ -292,7 +292,7 @@ p  { margin: 0 0 1em; color: #3a3a3a; }
   margin-top: 40px; padding-top: 18px;
   border-top: 1px solid #2a2a2a;
   display: flex; justify-content: space-between;
-  color: #a8a8a8; font-size: .9rem; flex-wrap: wrap; gap: 10px;
+  color: #e3e1e1; font-size: .9rem; flex-wrap: wrap; gap: 10px;
 }
 
 /* ── Page header (inner pages) ────────────────────────────── */
