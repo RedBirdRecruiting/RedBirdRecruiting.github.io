@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" role="img" aria-label="Redbird Recruiting">
+  <defs>
+    <linearGradient id="rbGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E53935"/>
+      <stop offset="60%" stop-color="#B2221A"/>
+      <stop offset="100%" stop-color="#8A1813"/>
+    </linearGradient>
+  </defs>
+  <!-- Stylized bird mark -->
+  <g transform="translate(6,10)">
+    <path d="M4 30 C 10 14, 24 8, 38 14 C 42 12, 46 12, 48 16 C 46 18, 44 19, 42 19 C 44 24, 40 30, 34 32 C 28 34, 20 34, 14 36 C 10 37, 6 36, 4 34 Z"
+          fill="url(#rbGrad)"/>
+    <circle cx="42" cy="16" r="1.4" fill="#1C1C1E"/>
+    <path d="M46 18 L52 14" stroke="#F4A261" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M38 22 L30 28" stroke="#1C1C1E" stroke-width="1.2" stroke-linecap="round" opacity="0.35"/>
+  </g>
+  <!-- Wordmark -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-weight="700">
+    <text x="70" y="32" font-size="22" fill="#1C1C1E" letter-spacing="0.5">Redbird</text>
+    <text x="70" y="50" font-size="12" fill="#6c6c6c" letter-spacing="4" font-family="Inter, Arial, sans-serif" font-weight="500">RECRUITING</text>
+  </g>
+</svg>

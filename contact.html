@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact | Redbird Recruiting</title>
+<meta name="description" content="Get in touch with Redbird Recruiting, whether you're hiring or looking for your next role." />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="Redbird Recruiting" /></a>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="employers.html">For Employers</a>
+      <a href="candidates.html">For Candidates</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="contact.html">Contact</a>
+      <a class="nav-cta" href="contact.html">Get Started</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <span class="eyebrow">Contact</span>
+    <h1>Let's start a conversation.</h1>
+    <p>Hiring, looking, or just exploring, we'd love to hear from you. All inquiries are confidential.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container grid grid-2" style="gap:48px;align-items:start;">
+    <div>
+      <h2>Tell us about you</h2>
+      <p>Fill out the form and a Redbird team member will follow up within one business day.</p>
+      <form class="form" data-contact novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" type="text" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" required />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" />
+          </div>
+          <div class="field">
+            <label for="type">I'm interested in…</label>
+            <select id="type">
+              <option>Hiring for my practice</option>
+              <option>Exploring a new role</option>
+              <option>Partnering with Redbird</option>
+              <option>Something else</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="msg">Message</label>
+          <textarea id="msg" placeholder="Share a few details, role, location, timing, or what you're looking for."></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" style="justify-self:start;">Send Message</button>
+        <p class="form-status" aria-live="polite" style="margin:0;"></p>
+      </form>
+    </div>
+
+    <aside>
+      <div class="card">
+        <h3>Get in touch</h3>
+        <p><strong>Phone:</strong> [Your phone]</p>
+        <p><strong>Email:</strong> [Your email]</p>
+        <p><strong>Office:</strong> [Your address]</p>
+        <p><strong>Hours:</strong> Mon–Fri, 8am–6pm CT</p>
+      </div>
+      <div class="card mt-24" style="margin-top:24px;">
+        <h3>Prefer to schedule?</h3>
+        <p>If you'd rather book a time directly, email us and we'll send over a calendar link.</p>
+        <a class="btn btn-outline" href="mailto:[Your email]">Email Us</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <img src="assets/logo.svg" alt="Redbird Recruiting" style="height:42px;filter:brightness(0) invert(1);" />
+      <p class="brand-line mt-24">Veterinary recruiting for practices that care who walks through the door.</p>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="employers.html">For Employers</a></li>
+        <li><a href="candidates.html">For Candidates</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>[Your phone]</li>
+        <li>[Your email]</li>
+        <li>[Your address]</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Follow</h4>
+      <ul>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span id="yr">2026</span> Redbird Recruiting. All rights reserved.</span>
+    <span>Made for the veterinary community.</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
