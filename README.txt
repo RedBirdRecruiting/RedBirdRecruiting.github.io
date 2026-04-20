@@ -1,8 +1,8 @@
-Redbird Recruiting, Website Files
-===================================
+Redbird Recruiting — Website Files
+====================================
 
-This folder contains a complete 5-page static website ready to upload to GoDaddy (or any
-static-hosting service). All pages link to each other via relative paths.
+A complete 6-page static website ready to upload to GoDaddy (or any static-hosting service).
+All pages link to each other via relative paths.
 
 FILES
 -----
@@ -10,42 +10,60 @@ FILES
   about.html        About page
   employers.html    For Employers page
   candidates.html   For Candidates page
+  jobs.html         Jobs board with sidebar filters
   contact.html      Contact page with form
-  styles.css        All site styles
-  main.js           Mobile nav + contact form handler
-  assets/logo.svg   Redbird logo (SVG, scales perfectly)
-  assets/favicon.svg Browser tab icon
+  styles.css        All site styles (single, unified file)
+  main.js           Mobile nav + contact form + jobs filter logic
+  assets/
+    logo.svg        Redbird logo
+    favicon.svg     Browser tab icon
 
 HOW TO UPLOAD TO GODADDY
-------------------------
-1. Log in to GoDaddy -> My Products -> find your hosting plan -> click "Manage".
-2. Open the cPanel or Hosting Dashboard, then open "File Manager".
-3. Navigate into the "public_html" folder (or the domain root folder for your site).
-4. Upload the ZIP of this folder (redbird-recruiting.zip), then right-click and "Extract".
-   Move the contents (index.html, other .html files, styles.css, main.js, assets/) to the
-   root of public_html so index.html is at the top level.
-5. Visit your domain in a browser to confirm it loads.
+--------------------------
+1. Log in to GoDaddy → My Products → find your hosting plan → Manage.
+2. Open File Manager (in cPanel or Hosting Dashboard).
+3. Navigate to the "public_html" folder (your domain root).
+4. Upload redbird-recruiting.zip, right-click it, and choose "Extract".
+5. Make sure index.html and all other files sit at the top level of public_html
+   (not inside a subfolder), alongside the assets/ folder.
+6. Visit your domain to confirm it loads.
 
 WHAT TO REPLACE BEFORE GOING LIVE
----------------------------------
-Search the files for these placeholders and replace them with real values:
-  [Your phone]    -> your business phone number
-  [Your email]    -> your contact email (also in contact.html mailto link)
-  [Your address]  -> your office/mailing address
+-----------------------------------
+Search all files for these placeholders and swap in real values:
 
-Social links in the footer currently point to "#". Replace the href with your real
-LinkedIn / Instagram / Facebook URLs when ready.
+  [Your phone]    → your business phone number
+  [Your email]    → your contact email  (also update the mailto: href in contact.html)
+  [Your address]  → your office or mailing address
+
+Social-link hrefs in every footer currently point to "#".
+Replace with your real LinkedIn / Instagram / Facebook URLs when ready.
 
 CONTACT FORM
-------------
-The contact form currently runs client-side only, it shows a success message but does not
-actually send email. To wire it up to email, either:
-  (a) Replace the <form> with a Formspree, Netlify, or Basin endpoint, or
-  (b) Use GoDaddy's built-in form-to-email feature, or
-  (c) Ask your developer to add a small PHP mailer.
+-------------
+The contact form is client-side only — it shows a success message but does not
+actually send email. To wire it to email, choose one of:
+  (a) Replace the <form> action with a Formspree, Netlify Forms, or Basin endpoint.
+  (b) Use GoDaddy's built-in form-to-email feature.
+  (c) Ask a developer to add a small PHP mailer or serverless function.
 
 BRANDING
---------
-Colors and fonts live at the top of styles.css as CSS variables. Tweak:
-  --red, --red-dark, --charcoal    to change the palette
-  --serif, --sans                   to change typography
+---------
+Colors and fonts live at the top of styles.css as CSS custom properties:
+  --red, --red-dark, --red-bright   primary palette
+  --gold                            warm accent
+  --charcoal, --ink, --muted        text tones
+  --serif, --sans                   typography stacks
+
+Change any of these variables and the entire site updates automatically.
+
+JOBS PAGE
+----------
+The jobs board uses a sidebar with checkboxes for Role type, Employment, and Region,
+plus a free-text search. Filtering is handled in main.js — no server required.
+
+To add or edit a job listing, copy an existing <div class="js-item"> block in
+jobs.html and update the data attributes and content:
+  data-role     = dvm | tech | leadership | manager
+  data-type     = full-time | part-time | relief
+  data-region   = northeast | southeast | midwest | southwest | west
