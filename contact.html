@@ -1,4 +1,4 @@
-<!doctype html>
+!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -42,25 +42,45 @@
     <div>
       <h2>Tell us about you</h2>
       <p>Fill out the form and a Redbird team member will follow up within one business day.</p>
-      <form action="https://formspree.io/f/meevrggw" method="POST">
-        <div class="row">
+
+      <!-- Formspree success message (hidden until submission) -->
+      <div data-fs-success class="form-success" style="display:none;">
+        <div class="form-success-inner">
+          <span class="form-success-icon">✓</span>
+          <div>
+            <strong>Message sent.</strong>
+            <p>Thanks for reaching out — a Redbird team member will be in touch within one business day.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formspree top-level error (e.g. network failure) -->
+      <div data-fs-error class="form-error-banner" style="display:none;">
+        Something went wrong. Please try again or email us directly.
+      </div>
+
+      <form id="contact-form">
+        <div class="form row" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
           <div class="field">
             <label for="name">Your name</label>
-            <input id="name" type="text" required />
+            <input id="name" name="name" type="text" required data-fs-field />
+            <span class="field-error" data-fs-error="name"></span>
           </div>
           <div class="field">
             <label for="email">Email</label>
-            <input id="email" type="email" required />
+            <input id="email" name="email" type="email" required data-fs-field />
+            <span class="field-error" data-fs-error="email"></span>
           </div>
         </div>
-        <div class="row">
+        <div class="form row" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
           <div class="field">
             <label for="phone">Phone</label>
-            <input id="phone" type="tel" />
+            <input id="phone" name="phone" type="tel" data-fs-field />
+            <span class="field-error" data-fs-error="phone"></span>
           </div>
           <div class="field">
-            <label for="type">I'm interested in…</label>
-            <select id="type">
+            <label for="interest">I'm interested in…</label>
+            <select id="interest" name="interest" data-fs-field>
               <option>Hiring for my practice</option>
               <option>Exploring a new role</option>
               <option>Partnering with Redbird</option>
@@ -68,26 +88,27 @@
             </select>
           </div>
         </div>
-        <div class="field">
-          <label for="msg">Message</label>
-          <textarea id="msg" placeholder="Share a few details — role, location, timing, or what you're looking for."></textarea>
+        <div class="field" style="margin-bottom:16px;">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Share a few details — role, location, timing, or what you're looking for." data-fs-field></textarea>
+          <span class="field-error" data-fs-error="message"></span>
         </div>
-        <button class="btn btn-primary" type="submit" style="justify-self:start;">Send Message</button>
-        <p class="form-status" aria-live="polite" style="margin:0;"></p>
+        <button class="btn btn-primary" type="submit" data-fs-submit-btn>Send Message</button>
       </form>
     </div>
 
     <aside>
       <div class="card">
         <h3>Get in touch</h3>
-        <p><strong>Phone:</strong> <a href="tel:+18152229337"> 815.222.9337</a> </p>
-        <p><strong>Email:</strong> <a href="mailto:jason@redbirdjobs.com">jobs@redbirdjobs.com</a></p>
+        <p><strong>Phone:</strong> [Your phone]</p>
+        <p><strong>Email:</strong> [Your email]</p>
+        <p><strong>Office:</strong> [Your address]</p>
         <p><strong>Hours:</strong> Mon–Fri, 8am–6pm CT</p>
       </div>
       <div class="card" style="margin-top:24px;">
         <h3>Prefer to schedule?</h3>
         <p>If you'd rather book a time directly, email us and we'll send over a calendar link.</p>
-        <a class="btn btn-outline" href="mailto:jobs@redbirdjobs.com">Email Us</a>
+        <a class="btn btn-outline" href="mailto:[Your email]">Email Us</a>
       </div>
     </aside>
   </div>
@@ -110,17 +131,27 @@
       </ul>
     </div>
     <div>
-      <h4>Contact</h4>
+       <h4>Contact</h4>
       <ul>
         <li>815.222.9337</li>
         <li>jobs@redbirdjobs.com</li>
       </ul>
     </div>
+  </div>
   <div class="container footer-bottom">
     <span>© <span id="yr"></span> Redbird Recruiting. All rights reserved.</span>
     <span>Made for the veterinary community.</span>
   </div>
 </footer>
+
+<!-- Formspree Ajax SDK (CDN, no bundler needed) -->
+<script>
+  window.formspree = window.formspree || function () {
+    (formspree.q = formspree.q || []).push(arguments);
+  };
+  formspree('initForm', { formElement: '#contact-form', formId: 'meevrggw' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 <script src="main.js"></script>
 <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
