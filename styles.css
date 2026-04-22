@@ -287,7 +287,7 @@ p  { margin: 0 0 1em; color: #3a3a3a; }
 }
 .footer ul   { list-style: none; padding: 0; margin: 0; }
 .footer li   { margin-bottom: 8px; }
-.footer .brand-line { opacity: .85; max-width: 36ch; color: #c4c4c4; }
+.footer .brand-line { max-width: 36ch; color: #c4c4c4; }
 .footer-bottom {
   margin-top: 40px; padding-top: 18px;
   border-top: 1px solid #2a2a2a;
