@@ -322,7 +322,7 @@ p  { margin: 0 0 1em; color: #3a3a3a; }
 ul.checks { list-style: none; padding: 0; }
 ul.checks li { padding: 8px 0 8px 30px; position: relative; }
 ul.checks li::before {
-  content: "âœ“"; position: absolute; left: 0; top: 8px;
+  content: "\2713"; position: absolute; left: 0; top: 8px;
   width: 20px; height: 20px; border-radius: 50%;
   background: var(--red); color: #fff;
   display: flex; align-items: center; justify-content: center; font-size: 12px;
@@ -480,7 +480,7 @@ ul.checks li::before {
   color: var(--muted);
 }
 .js-meta span + span::before {
-  content: "Â·";
+  content: "\00B7";
   margin-right: 16px;
 }
 

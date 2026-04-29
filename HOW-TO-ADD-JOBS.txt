@@ -1,0 +1,134 @@
+REDBIRD RECRUITING — HOW TO ADD A NEW JOB
+==========================================
+
+Every new job requires two things:
+  1. A new job detail PAGE  (e.g. job-redbird-xx-000.html)
+  2. A new job CARD added to jobs.html
+
+Formspree automatically receives the job ID and title with every
+application because of two hidden fields in the apply form.
+You will see them labeled "job_id" and "job_title" in every
+Formspree submission email.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1 — PICK A JOB ID AND FILE NAME
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Use this format:
+  Job ID:    REDBIRD-XX-000   (XX = 2-letter state, 000 = next number)
+  File name: job-redbird-xx-000.html
+
+Examples already in use:
+  REDBIRD-OH-001  →  job-redbird-oh-001.html
+  REDBIRD-VT-101  →  job-redbird-vt-101.html
+
+Your next job would be something like:
+  REDBIRD-TX-002  →  job-redbird-tx-002.html
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2 — CREATE THE JOB DETAIL PAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Copy job-redbird-oh-001.html and rename it (e.g. job-redbird-tx-002.html).
+
+Then find and update these 9 things inside the file:
+
+  1. <title> tag at the top
+       Change to: Job Title — Location | Redbird Recruiting
+
+  2. <meta name="description"> tag
+       Write a 1-sentence summary of the role.
+
+  3. The pill badges (role / type / region labels)
+       <span>Veterinarian</span><span>Full-time</span><span>Midwest</span>
+
+  4. The <h1> job title
+
+  5. The location + Job ID line
+       📍 City, State  ·  Job ID: REDBIRD-XX-000
+
+  6. The four meta boxes (Compensation, Schedule, Employment, Experience)
+
+  7. The job description sections
+       (The Opportunity, About the Practice, What's Offered,
+        What We're Looking For, and any location section)
+
+  8. The two hidden fields in the apply form — MOST IMPORTANT FOR FORMSPREE:
+       <input type="hidden" name="job_id"    value="REDBIRD-XX-000" />
+       <input type="hidden" name="job_title" value="Full Job Title — Location" />
+
+  9. The species dropdown (optional — remove or change options to suit the role)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3 — ADD A CARD TO jobs.html
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Open jobs.html and paste the card template below inside the
+<div class="js-list" id="job-list"> block, after the last </div>.
+
+Fill in the 6 marked fields and make sure data-role / data-type /
+data-region match the allowed values listed at the bottom of this file.
+
+── CARD TEMPLATE (copy everything between the lines) ──────────
+
+          <div class="js-item" data-role="ROLE" data-type="TYPE" data-region="REGION">
+            <div>
+              <h3>JOB TITLE</h3>
+              <div class="js-meta">
+                <span>City, State</span>
+                <span>Full-time</span>
+                <span>$000K–$000K</span>
+              </div>
+              <div class="js-pills">
+                <span>Tag</span><span>Tag</span><span>Tag</span>
+              </div>
+            </div>
+            <a class="btn btn-primary btn-sm" href="job-redbird-xx-000.html">Apply</a>
+          </div>
+
+───────────────────────────────────────────────────────────────
+
+ALLOWED VALUES FOR DATA ATTRIBUTES
+  data-role   →  dvm | tech | leadership | manager
+  data-type   →  full-time | part-time | relief
+  data-region →  northeast | southeast | midwest | southwest | west
+
+These must match exactly (lowercase) or the sidebar filters won't work.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HOW FORMSPREE IDENTIFIES EACH APPLICATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Every job detail page has these two hidden fields inside the form:
+
+  <input type="hidden" name="job_id"    value="REDBIRD-OH-001" />
+  <input type="hidden" name="job_title" value="Full-Time Veterinarian (DVM)..." />
+
+When someone submits an application, Formspree sends you an email
+that includes ALL form fields — including these hidden ones.
+Your inbox will show something like:
+
+  job_id:    REDBIRD-OH-001
+  job_title: Full-Time Veterinarian (DVM), Mixed-Animal Practice — Eastern Ohio
+  name:      Jane Smith
+  email:     jane@email.com
+  phone:     555-000-0000
+  ...
+
+This means you always know exactly which role each applicant
+is responding to, with no extra setup required in Formspree.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+REMOVING A FILLED ROLE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Delete (or keep archived) the job-redbird-xx-000.html file.
+2. In jobs.html, delete the entire <div class="js-item"> block
+   for that role — from the opening <div> to its closing </div>.
+
+You do NOT need to touch styles.css or main.js when adding
+or removing jobs.
