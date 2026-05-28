@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Refer a Veterinarian | Redbird Recruiting</title>
+<meta name="description" content="Know a great veterinarian, technician, or practice leader who might be open to a new opportunity? Refer them to Redbird Recruiting." />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="Redbird Recruiting" /></a>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="employers.html">For Employers</a>
+      <a href="candidates.html">For Candidates</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="contact.html">Contact</a>
+      <a class="nav-cta" href="contact.html">Get Started</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <span class="eyebrow">Refer a Colleague</span>
+    <h1>Know a great DVM? <span style="color:var(--gold);">Earn $5,000.</span></h1>
+    <p>Refer a veterinarian to Redbird and earn up to $5,000 when they're placed. We reach out confidentially, handle everything, and pay you at two milestones once they're settled in their new role.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container grid grid-2" style="gap:48px;align-items:start;">
+
+    <div>
+      <h2>Submit a referral</h2>
+      <p>Fill out the short form and we'll take it from here. We always reach out respectfully and never pressure anyone. Your referral's current employer will never know unless they tell them.</p>
+
+      <!-- Formspree success message -->
+      <div data-fs-success class="form-success" style="display:none;">
+        <div class="form-success-inner">
+          <span class="form-success-icon">✓</span>
+          <div>
+            <strong>Referral received.</strong>
+            <p>Thanks for thinking of us — we'll follow up with your colleague confidentially and let you know we made contact.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formspree top-level error -->
+      <div data-fs-error class="form-error-banner" style="display:none;">
+        Something went wrong. Please try again or email us directly.
+      </div>
+
+      <form id="referral-form">
+        <input type="hidden" name="form_type" value="Candidate Referral" />
+
+        <p class="referral-section-label">Your information</p>
+
+        <div class="form row" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div class="field">
+            <label for="your-name">Your name</label>
+            <input id="your-name" name="your_name" type="text" required data-fs-field />
+            <span class="field-error" data-fs-error="your_name"></span>
+          </div>
+          <div class="field">
+            <label for="your-email">Your email</label>
+            <input id="your-email" name="your_email" type="email" required data-fs-field />
+            <span class="field-error" data-fs-error="your_email"></span>
+          </div>
+        </div>
+        <div class="field" style="margin-bottom:24px;">
+          <label for="your-phone">Your phone <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
+          <input id="your-phone" name="your_phone" type="tel" data-fs-field />
+        </div>
+
+        <p class="referral-section-label">Candidate's information</p>
+
+        <div class="form row" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div class="field">
+            <label for="candidate-name">Candidate's name</label>
+            <input id="candidate-name" name="candidate_name" type="text" required data-fs-field />
+            <span class="field-error" data-fs-error="candidate_name"></span>
+          </div>
+          <div class="field">
+            <label for="candidate-email">Candidate's email <span style="font-weight:400;color:var(--muted);">(if known)</span></label>
+            <input id="candidate-email" name="candidate_email" type="email" data-fs-field />
+          </div>
+        </div>
+        <div class="field" style="margin-bottom:16px;">
+          <label for="candidate-phone">Candidate's phone <span style="font-weight:400;color:var(--muted);">(if known)</span></label>
+          <input id="candidate-phone" name="candidate_phone" type="tel" data-fs-field />
+        </div>
+        <div class="field" style="margin-bottom:16px;">
+          <label for="note">Quick note <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
+          <textarea id="note" name="note" placeholder="Their role, specialty, location, or anything that would help us reach out in the right way." data-fs-field></textarea>
+          <span class="field-error" data-fs-error="note"></span>
+        </div>
+
+        <button class="btn btn-primary" type="submit" data-fs-submit-btn>Submit Referral</button>
+
+        <p style="font-size:.8rem;color:var(--muted);margin-top:12px;">We treat every referral with care and discretion. We will never contact your colleague's current employer.</p>
+      </form>
+    </div>
+
+    <aside>
+
+      <!-- Referral bonus card -->
+      <div class="card referral-bonus-card">
+        <div class="referral-bonus-header">
+          <p class="referral-bonus-eyebrow">Per qualified DVM hire</p>
+          <p class="referral-bonus-total">$5,000</p>
+        </div>
+        <div class="referral-installment">
+          <div class="referral-installment-item">
+            <span class="installment-amount">$1,000</span>
+            <span class="installment-timing">Within 30 days of the DVM's start date</span>
+          </div>
+          <div class="referral-installment-divider">+</div>
+          <div class="referral-installment-item">
+            <span class="installment-amount">$4,000</span>
+            <span class="installment-timing">Within 30 days after 6 months of continuous employment in good standing</span>
+          </div>
+        </div>
+        <p class="referral-bonus-note">If the DVM leaves voluntarily or is terminated for cause before six months, the $4,000 isn't paid. <strong>The first $1,000 is yours either way.</strong></p>
+      </div>
+
+      <!-- Qualified referral criteria -->
+      <div class="card" style="margin-top:24px;">
+        <h3>What counts as a qualified referral</h3>
+        <ul class="checks">
+          <li>They hold an active DVM (or equivalent) credential.</li>
+          <li>They're hired by a Redbird client into a full-time or eligible part-time role.</li>
+          <li>They haven't applied to or spoken with Redbird in the last 12 months.</li>
+          <li>You submitted them before our team contacted them.</li>
+          <li>They confirm you as the referrer during the hiring process.</li>
+        </ul>
+      </div>
+
+      <!-- How it works -->
+      <div class="card" style="margin-top:24px;">
+        <h3>How it works</h3>
+        <ul class="checks">
+          <li>Submit the form with whatever contact info you have — even a name and rough role is enough.</li>
+          <li>We reach out to your colleague privately. No pressure, no hard sell.</li>
+          <li>If there's a fit, we match them to the right opportunity.</li>
+          <li>Once they're placed and hit the milestones, we pay you.</li>
+        </ul>
+      </div>
+
+    </aside>
+
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Looking for a role yourself?</h2>
+      <p>Browse our open positions or submit your own info for a confidential conversation.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a class="btn btn-ghost" href="jobs.html">View Open Jobs</a>
+        <a class="btn btn-ghost" href="contact.html">Submit Your Info</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <img src="assets/logo.svg" alt="Redbird Recruiting" style="height:80px;filter:brightness(0) invert(1);" />
+      <p class="brand-line mt-24">Veterinary recruiting for practices that care who walks through the door.</p>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="employers.html">For Employers</a></li>
+        <li><a href="candidates.html">For Candidates</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="referral.html">Refer a Colleague</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+18152229337">815.222.9337</a></li>
+        <li><a href="mailto:jobs@redbirdjobs.com">jobs@redbirdjobs.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span id="yr"></span> Redbird Recruiting. All rights reserved.</span>
+    <span>Made for the veterinary community.</span>
+  </div>
+</footer>
+
+<!-- Formspree Ajax SDK -->
+<script>
+  window.formspree = window.formspree || function () {
+    (formspree.q = formspree.q || []).push(arguments);
+  };
+  formspree('initForm', { formElement: '#referral-form', formId: 'meevrggw' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+<script src="main.js"></script>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
