@@ -701,3 +701,86 @@ ul.checks li::before {
   margin: 12px 0 0;
   line-height: 1.5;
 }
+
+/* ── Referral page ────────────────────────────────────────── */
+.referral-section-label {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--red);
+  margin: 0 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Referral bonus card ──────────────────────────────────── */
+.referral-bonus-card {
+  padding: 0;
+  overflow: hidden;
+}
+.referral-bonus-header {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.referral-bonus-eyebrow {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  margin: 0 0 4px;
+}
+.referral-bonus-total {
+  font-family: var(--serif);
+  font-size: 2.6rem;
+  color: var(--charcoal);
+  margin: 0;
+  line-height: 1;
+}
+.referral-installment {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid var(--border);
+}
+.referral-installment-item {
+  flex: 1;
+  padding: 16px 20px;
+}
+.referral-installment-item:first-child {
+  border-right: 1px solid var(--border);
+}
+.referral-installment-item:last-child {
+  border-left: 1px solid var(--border);
+}
+.installment-amount {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: var(--charcoal);
+  display: block;
+  margin-bottom: 4px;
+}
+.installment-timing {
+  font-size: .83rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.referral-installment-divider {
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+.referral-bonus-note {
+  font-size: .85rem;
+  color: var(--ink);
+  line-height: 1.6;
+  margin: 0;
+  padding: 14px 24px;
+  background: var(--bg-alt);
+}
+.referral-bonus-note strong {
+  color: var(--charcoal);
+}
