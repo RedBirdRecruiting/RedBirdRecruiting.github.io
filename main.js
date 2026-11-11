@@ -17,6 +17,24 @@ document.addEventListener("DOMContentLoaded", () => {
     if (a.getAttribute("href") === page) a.style.color = "var(--red-dark)";
   });
 
+  /* ── Preselect contact "interest" from the link clicked ─────
+     e.g. contact.html?interest=review  or  ?interest=sample   */
+  const interestSel = document.getElementById("interest");
+  if (interestSel) {
+    const want = new URLSearchParams(location.search).get("interest");
+    const map = {
+      review: "Practice advisory: free practice review",
+      sample: "Practice advisory: sample KPI report"
+    };
+    if (want && map[want]) {
+      interestSel.value = map[want];
+      const msg = document.getElementById("message");
+      if (msg && !msg.placeholder.includes("practice")) {
+        msg.placeholder = "Tell us about your practice — number of locations and doctors, and what you'd most like to improve.";
+      }
+    }
+  }
+
   /* ── Contact form handler ────────────────────────────────── */
   const form = document.querySelector("form[data-contact]");
   if (form) {
