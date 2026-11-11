@@ -784,3 +784,45 @@ ul.checks li::before {
 .referral-bonus-note strong {
   color: var(--charcoal);
 }
+
+/* ── Practice Advisory ────────────────────────────────────── */
+.mt-16 { margin-top: 16px; }
+.mt-48 { margin-top: 48px; }
+.page-header .hero-ctas { margin-top: 28px; }
+.cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-light { background: #fff; color: var(--red-dark); }
+.btn-light:hover { background: var(--bg-alt); color: var(--red-dark); }
+.levers {
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  justify-content: center; margin-top: 36px;
+}
+.levers span {
+  padding: 6px 14px; border-radius: 999px; font-size: .9rem; font-weight: 600;
+  background: rgba(178,34,26,.08); color: var(--red-dark);
+  border: 1px solid rgba(178,34,26,.18);
+}
+.levers .levers-label {
+  background: none; border: 0; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 2px; font-size: .75rem;
+}
+.bio p { font-size: 1.02rem; }
+.feature-band {
+  display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; align-items: center;
+  background: #fff; border: 1px solid var(--border); border-radius: 18px;
+  padding: 44px; box-shadow: var(--shadow-sm);
+}
+.feature-band .eyebrow {
+  text-transform: uppercase; letter-spacing: 3px; font-size: .75rem;
+  font-weight: 600; color: var(--red); display: inline-block; margin-bottom: 12px;
+}
+.feature-band .hero-ctas { margin-top: 8px; }
+@media (max-width: 820px) {
+  .feature-band { grid-template-columns: 1fr; padding: 28px; }
+}
+/* Nav has 8 links now: tighten spacing on mid-size screens */
+@media (max-width: 1100px) and (min-width: 821px) {
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: .88rem; }
+  .brand img { height: 64px; }
+}
+#jason { scroll-margin-top: 110px; }
