@@ -842,3 +842,11 @@ ul.checks li::before {
   .brand img { height: 52px; }
   .nav-links { top: 80px; }
 }
+
+/* ── Line icons (single brand color) ──────────────────────── */
+.card .icon svg, .pin svg {
+  width: 22px; height: 22px; fill: none; stroke: currentColor;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.pin { display: inline-flex; vertical-align: -3px; margin-right: 4px; color: var(--red); }
+.pin svg { width: 16px; height: 16px; }
