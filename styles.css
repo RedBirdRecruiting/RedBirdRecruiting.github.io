@@ -825,3 +825,20 @@ ul.checks li::before {
   .brand img { height: 64px; }
 }
 #jason { scroll-margin-top: 110px; }
+
+/* ── Home: service cards ──────────────────────────────────── */
+.service-card { display: flex; flex-direction: column; }
+.service-card .hero-ctas { margin-top: auto; padding-top: 12px; }
+.service-card ul.checks { margin: 16px 0 8px; }
+.eyebrow-sm {
+  text-transform: uppercase; letter-spacing: 2px; font-size: .72rem;
+  font-weight: 700; color: var(--red); display: block; margin-bottom: 6px;
+}
+
+/* Keep side padding on hero and nav (their vertical padding rules had zeroed it) */
+.nav-inner  { padding-left: 24px; padding-right: 24px; }
+.hero-inner { padding-left: 24px; padding-right: 24px; }
+@media (max-width: 620px) {
+  .brand img { height: 52px; }
+  .nav-links { top: 80px; }
+}
