@@ -1,4 +1,4 @@
-Redbird Recruiting — Website Files
+Redbird Recruiting: Website Files
 ====================================
 
 A complete 6-page static website ready to upload to GoDaddy (or any static-hosting service).
@@ -44,7 +44,7 @@ Replace with your real LinkedIn / Instagram / Facebook URLs when ready.
 
 CONTACT FORM
 -------------
-The contact form is client-side only — it shows a success message but does not
+The contact form is client-side only. It shows a success message but does not
 actually send email. To wire it to email, choose one of:
   (a) Replace the <form> action with a Formspree, Netlify Forms, or Basin endpoint.
   (b) Use GoDaddy's built-in form-to-email feature.
@@ -63,7 +63,7 @@ Change any of these variables and the entire site updates automatically.
 JOBS PAGE
 ----------
 The jobs board uses a sidebar with checkboxes for Role type, Employment, and Region,
-plus a free-text search. Filtering is handled in main.js — no server required.
+plus a free-text search. Filtering is handled in main.js, so no server is required.
 
 To add or edit a job listing, copy an existing <div class="js-item"> block in
 jobs.html and update the data attributes and content:
