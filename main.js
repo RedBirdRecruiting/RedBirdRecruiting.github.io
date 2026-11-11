@@ -1,4 +1,4 @@
-/* Redbird Recruiting — main.js */
+/* Redbird Recruiting: main.js */
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ── Mobile nav toggle ──────────────────────────────────── */
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       interestSel.value = map[want];
       const msg = document.getElementById("message");
       if (msg && !msg.placeholder.includes("practice")) {
-        msg.placeholder = "Tell us about your practice — number of locations and doctors, and what you'd most like to improve.";
+        msg.placeholder = "Tell us about your practice: number of locations and doctors, and what you'd most like to improve.";
       }
     }
   }
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const status = form.querySelector(".form-status");
       if (status) {
-        status.textContent = "Thanks — your message has been noted. We'll be in touch shortly.";
+        status.textContent = "Thanks! Your message has been noted. We'll be in touch shortly.";
         status.style.color = "#2a8a3b";
       }
       form.reset();
